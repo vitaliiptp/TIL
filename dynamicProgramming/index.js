@@ -192,19 +192,107 @@
 // console.log(allConstruct("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeef", ["e", "ee", "eee", "eeeee", "eeeeeeee"])); // 0
 
 
-// TODO: Fib tabulation
-const fib = (n) => {
-    const table = Array(n + 1).fill(0);
-    table[1] = 1;
+// // TODO: Fib tabulation
+// const fib = (n) => {
+//     const table = Array(n + 1).fill(0);
+//     table[1] = 1;
+//
+//     for (let i = 0; i < n; i++) {
+//         table[i + 1] += table[i];
+//         table[i + 2] += table[i];
+//     }
+//     return table[n];
+// }
+//
+// console.log(fib(6)) // 8;
+// console.log(fib(7)) // 13;
+// console.log(fib(8)) // 21;
+// console.log(fib(50)) // 12586269025;
 
-    for (let i = 0; i < n; i++) {
-        table[i + 1] += table[i];
-        table[i + 2] += table[i];
-    }
-    return table[n];
+
+// // TODO: Grid traveller tabulation
+// const gridTraveller = (m, n) => {
+//     const table = Array (m + 1).fill().map((_) => Array(n + 1).fill(0));
+//     table[1][1] = 1;
+//     for (let i = 0; i <= m; i++) {
+//         for (let j = 0; j <= n; j++) {
+//             const current = table[i][j];
+//             if (j + 1 <= n) table[i][j + 1] += current;
+//             if (i + 1 <= m) table[i + 1][j] += current;
+//         }
+//     }
+//     return table[m][n];
+// }
+//
+// console.log(gridTraveller(1, 1)) // 1
+// console.log(gridTraveller(3, 2)) // 3
+// console.log(gridTraveller(2, 3)) // 3
+// console.log(gridTraveller(3, 3)) // 6
+// console.log(gridTraveller(18, 18)) // 2333606220
+
+
+// // TODO: Find if it's possible to get the required number by summing elements of the array. Tabulation version
+// const canSum = (target, nums) => {
+//     const table = Array(target + 1).fill(false);
+//     table[0] = true;
+//
+//     // for (let i = 0; i <= table.length; i++) {
+//     for (let i = 0; i <= target; i++) {
+//
+//             if (table[i] === true) {
+//             for (let num of nums) {
+//                 // if (table[i + num] <= table.length) table[i + num] = true;
+//                 table[i + num] = true;
+//             }
+//         }
+//     }
+//     return table[target];
+// }
+//
+// console.log(canSum(7, [2, 3]))  // true
+// console.log(canSum(7, [5, 3, 4, 7]))  // true
+// console.log(canSum(7, [2, 4]))  // false
+// console.log(canSum(8, [2, 3, 5]))  // true
+// console.log(canSum(300, [7, 14]))  // false
+
+
+// // TODO: Function that returns an array with combination of elements that add up to exactly the target sum. Tabulation
+// const howSum = (target, nums) => {
+//     const table = Array(target + 1).fill(null);
+//     table[0] = [];
+//
+//     for (let i = 0; i <= target; i++) {
+//         if (table[i] != null) {
+//             for (let num of nums) {
+//                 if (table[i + num] <= table.length) {
+//                     table[i + num] = [...table[i], num];
+//                 }
+//             }
+//         }
+//     }
+//
+//     return table[target];
+// }
+//
+//
+// console.log(howSum(7, [2, 3]));
+// console.log(howSum(7, [5, 3, 4, 7]));
+// console.log(howSum(7, [2, 4]));
+// console.log(howSum(8, [2, 3, 5]));
+// console.log(howSum(300, [7, 14]));
+
+
+// TODO: Function that returns an array with the shortest combination of elements that add up to exactly the target sum. Tabulation
+const bestSum = (targetSum, nums) => {
+   const table = Array(targetSum + 1).fill(null);
+
+
+    return table[targetSum];
 }
 
-console.log(fib(6)) // 8;
-console.log(fib(7)) // 13;
-console.log(fib(8)) // 21;
-console.log(fib(50)) // 12586269025;
+console.log(bestSum(7, [5, 3, 4, 7]));
+console.log(bestSum(8, [2, 3, 5]));
+console.log(bestSum(8, [1 ,4, 5]));
+console.log(bestSum(100, [1, 2, 5, 25]));
+
+
