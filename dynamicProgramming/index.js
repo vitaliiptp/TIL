@@ -185,7 +185,7 @@
 //     return result;
 // }
 //
-// console.log(allConstruct("abcdef", ["ab", "abc", "cd", "def", "abcd", "ef", "c"])); // 1
+// console.log(allConstruct("abcdef", ["ab", "abc", "cd", "def", "abcd", "ef", "c"])); // 4
 // console.log(allConstruct("purple", ["purp", "p", "ur", "le", "purpl"])); // 2
 // console.log(allConstruct("skateboard", ["bo", "rd", "ate", "t", "ska", "sk", "boar"])); // 0
 // console.log(allConstruct("enterapotentpot", ["a", "p", "ent", "enter", "ot", "o", "t"])); // 4
@@ -282,17 +282,97 @@
 // console.log(howSum(300, [7, 14]));
 
 
-// TODO: Function that returns an array with the shortest combination of elements that add up to exactly the target sum. Tabulation
-const bestSum = (targetSum, nums) => {
-   const table = Array(targetSum + 1).fill(null);
+// // TODO: Function that returns an array with the shortest combination of elements that add up to exactly the target sum. Tabulation
+// const bestSum = (targetSum, nums) => {
+//     const table = Array(targetSum + 1).fill(null);
+//     table[0] = [];
+//
+//     for (let i = 0; i <= targetSum; i++) {
+//         if (table[i] !== null) {
+//             for (let num of nums) {
+//                 const combination = [...table[i], num];
+//                 if (!table[i + num] || table[i + num].length > combination.length) {
+//                     table[i + num] = combination;
+//                 }
+//             }
+//         }
+//     }
+//
+//     return table[targetSum];
+// }
+//
+// console.log(bestSum(7, [5, 3, 4, 7]));
+// console.log(bestSum(8, [2, 3, 5]));
+// console.log(bestSum(8, [1, 4, 5]));
+// console.log(bestSum(100, [1, 2, 5, 25]));
 
 
-    return table[targetSum];
-}
+//  // TODO: Construct string out of elements of an array. Return true OR false. Tabulation
+// const canConstruct = (target, wordBank) => {
+//     const table = Array(target.length + 1).fill(false);
+//     table[0] = true;
+//
+//     for (let i = 0; i <= target.length; i++) {
+//         if (table[i] === true) {
+//             for (let word of wordBank) {
+//                 if (target.slice(i, i + word.length) === word) {
+//                     table[i + word.length] = true;
+//                 }
+//             }
+//         }
+//     }
+//
+//     return table[target.length];
+// };
+//
+// console.log(canConstruct("abcdef", ["ab", "abc", "cd", "def", "abcd"])); // true
+// console.log(canConstruct("skateboard", ["bo", "rd", "ate", "t", "ska", "sk", "boar"])); // false
+// console.log(canConstruct("enterapotentpot", ["a", "p", "ent", "enter", "ot", "o", "t"])); // true
+// console.log(canConstruct("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeef", ["e", "ee", "eee", "eeeee", "eeeeeeee"])); // false
 
-console.log(bestSum(7, [5, 3, 4, 7]));
-console.log(bestSum(8, [2, 3, 5]));
-console.log(bestSum(8, [1 ,4, 5]));
-console.log(bestSum(100, [1, 2, 5, 25]));
+
+// // TODO: Construct string out of elements of an array. Return number of ways
+// const countConstruct = (target, wordBank) => {
+//     const table = Array(target.length + 1).fill(0);
+//     table[0] = 1;
+//
+//     for (let i = 0; i <= target.length; i++) {
+//         for (let word of wordBank) {
+//             if (target.slice(i, i + word.length) === word) {
+//                 table[i + word.length] += table[i];
+//             }
+//         }
+//     }
+//
+//     return table[target.length];
+// };
+//
+// console.log(countConstruct("abcdef", ["ab", "abc", "cd", "def", "abcd"])); // 1
+// console.log(countConstruct("purple", ["purp", "p", "ur", "le", "purpl"])); // 2
+// console.log(countConstruct("skateboard", ["bo", "rd", "ate", "t", "ska", "sk", "boar"])); // 0
+// console.log(countConstruct("enterapotentpot", ["a", "p", "ent", "enter", "ot", "o", "t"])); // 4
+// console.log(countConstruct("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeef", ["e", "ee", "eee", "eeeee", "eeeeeeee"])); // 0
 
 
+// // TODO: Construct string out of elements of an array. Return all the possible ways. Tabulation
+// const allConstruct = (target, wordBank) => {
+//     const table = Array(target.length + 1).fill().map((_) => []);
+//     table[0] = [[]];
+//
+//     for (let i = 0; i <= target.length; i++) {
+//         for (let word of wordBank) {
+//             if (target.slice(i, i + word.length) === word) {
+//                 const newCombinations = table[i].map(subArray => [...subArray, word]);
+//                 table[i + word.length].push(...newCombinations);
+//             }
+//         }
+//     }
+//
+//     return table[target.length];
+// }
+//
+// console.log(allConstruct("abcdef", ["ab", "abc", "cd", "def", "abcd", "ef", "c"])); // 4
+// console.log(allConstruct("purple", ["purp", "p", "ur", "le", "purpl"])); // 2
+// console.log(allConstruct("skateboard", ["bo", "rd", "ate", "t", "ska", "sk", "boar"])); // 0
+// console.log(allConstruct("enterapotentpot", ["a", "p", "ent", "enter", "ot", "o", "t"])); // 4
+// console.log(allConstruct("eeeeeeeeeeeeeeeeeeeef", ["e", "ee", "eee", "eeeee", "eeeeeeee"])); // 0
