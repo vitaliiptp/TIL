@@ -40,7 +40,7 @@
 // console.log(gridTraveler(18, 18)); // 2333606220
 
 
-// // TODO: Find if it's possible to get the required number by summing elements of the array
+// // TODO: canSum - Find if it's possible to get the required number by summing elements of the array
 // const canSum = (targetSum, numbers, memo = {}) => {
 //     if (targetSum in memo) return memo[targetSum]
 //     if (targetSum === 0) return true;
@@ -65,8 +65,7 @@
 // console.log(canSum(300, [7, 14]))  // true
 
 
-//
-// // TODO: Function that returns an array with combination of elements that add up to exactly the target sum.
+// // TODO: howSum - Function that returns an array with combination of elements that add up to exactly the target sum.
 // const howSum = (targetSum, numbers, memo = {}) => {
 //     if (targetSum in memo) return memo[targetSum];
 //     if (targetSum === 0) return []
@@ -91,7 +90,7 @@
 // console.log(howSum(300, [7, 14]));
 
 
-// // TODO: Function that returns an array with the shortest combination of elements that add up to exactly the target sum.
+// // TODO: bestSum - Function that returns an array with the shortest combination of elements that add up to exactly the target sum.
 // const bestSum = (targetSum, nums, memo={}) => {
 //     if (targetSum in memo) return memo[targetSum];
 //     if (targetSum === 0) return [];
@@ -119,7 +118,7 @@
 // console.log(bestSum(100, [1, 2, 5, 25]));
 
 
-//  // TODO: Construct string out of elements of an array. Return true OR false
+//  // TODO: canConstruct - Construct string out of elements of an array. Return true OR false
 // const canConstruct = (target, wordBank, memo={}) => {
 //     if (target in memo) return memo[target];
 //     if (target === "") return true;
@@ -143,7 +142,7 @@
 // console.log(canConstruct("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeef", ["e", "ee", "eee", "eeeee", "eeeeeeee"])); // false
 
 
-// // TODO: Construct string out of elements of an array. Return number of ways
+// // TODO: countConstruct - Construct string out of elements of an array. Return number of ways
 // const countConstruct = (target, wordBank, memo={}) => {
 //     if (target in memo) return memo[target];
 //     if (target === "") return 1;
@@ -166,7 +165,7 @@
 // console.log(countConstruct("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeef", ["e", "ee", "eee", "eeeee", "eeeeeeee"])); // 0
 
 
-// // TODO: Construct string out of elements of an array. Return all the possible ways
+// // TODO: allConstruct - Construct string out of elements of an array. Return all the possible ways
 // const allConstruct = (target, wordBank, memo={}) => {
 //     if (target in memo) return memo[target]
 //     if (target === "") return [[]];
@@ -231,7 +230,7 @@
 // console.log(gridTraveller(18, 18)) // 2333606220
 
 
-// // TODO: Find if it's possible to get the required number by summing elements of the array. Tabulation version
+// // TODO: canSum - Find if it's possible to get the required number by summing elements of the array. Tabulation version
 // const canSum = (target, nums) => {
 //     const table = Array(target + 1).fill(false);
 //     table[0] = true;
@@ -256,7 +255,7 @@
 // console.log(canSum(300, [7, 14]))  // false
 
 
-// // TODO: Function that returns an array with combination of elements that add up to exactly the target sum. Tabulation
+// // TODO: howSum - Function that returns an array with combination of elements that add up to exactly the target sum. Tabulation
 // const howSum = (target, nums) => {
 //     const table = Array(target + 1).fill(null);
 //     table[0] = [];
@@ -282,7 +281,7 @@
 // console.log(howSum(300, [7, 14]));
 
 
-// // TODO: Function that returns an array with the shortest combination of elements that add up to exactly the target sum. Tabulation
+// // TODO: bestSum - Function that returns an array with the shortest combination of elements that add up to exactly the target sum. Tabulation
 // const bestSum = (targetSum, nums) => {
 //     const table = Array(targetSum + 1).fill(null);
 //     table[0] = [];
@@ -307,7 +306,7 @@
 // console.log(bestSum(100, [1, 2, 5, 25]));
 
 
-//  // TODO: Construct string out of elements of an array. Return true OR false. Tabulation
+//  // TODO: canConstruct - Construct string out of elements of an array. Return true OR false. Tabulation
 // const canConstruct = (target, wordBank) => {
 //     const table = Array(target.length + 1).fill(false);
 //     table[0] = true;
@@ -331,7 +330,7 @@
 // console.log(canConstruct("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeef", ["e", "ee", "eee", "eeeee", "eeeeeeee"])); // false
 
 
-// // TODO: Construct string out of elements of an array. Return number of ways
+// // TODO: countConstruct - Construct string out of elements of an array. Return number of ways
 // const countConstruct = (target, wordBank) => {
 //     const table = Array(target.length + 1).fill(0);
 //     table[0] = 1;
@@ -354,7 +353,7 @@
 // console.log(countConstruct("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeef", ["e", "ee", "eee", "eeeee", "eeeeeeee"])); // 0
 
 
-// // TODO: Construct string out of elements of an array. Return all the possible ways. Tabulation
+// // TODO: allConstruct - Construct string out of elements of an array. Return all the possible ways. Tabulation
 // const allConstruct = (target, wordBank) => {
 //     const table = Array(target.length + 1).fill().map((_) => []);
 //     table[0] = [[]];
